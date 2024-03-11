@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class menuInicial : MonoBehaviour
 {
    public void Jugar(){
-   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+   SceneManager.LoadScene("Nivel");
    }
 
    public void Instrucciones(){
-   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+   SceneManager.LoadScene("Instrucciones");
    }
    public void Devlog(){
-   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+   SceneManager.LoadScene("Devlog");
    }
 
    public void Creditos(){
-   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+   SceneManager.LoadScene("Creditos");
    }
 
    public void Salir(){
