@@ -6,6 +6,8 @@ public class ControladorJugador : MonoBehaviour
 {
     [SerializeField] private GameObject humano;
     [SerializeField] private GameObject conejo;
+    [SerializeField] private GameObject ave;
+    [SerializeField] private GameObject oso;
     [SerializeField] private Camera mainCamera;
     
     [SerializeField] private float transitionSpeed = .005f; 
@@ -21,36 +23,32 @@ public class ControladorJugador : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            TransformarConejo();
+            Transformarcion(conejo, 2.5f);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            TransformarHumano();
+            Transformarcion(humano, 5f);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Transformarcion(ave, 2.5f);
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Transformarcion(oso, 6f);
         }
     }
 
-    void TransformarConejo()
+    void Transformarcion(GameObject forma, float zoomCamara)
     {
         transform.position = formaInstanciada.transform.position;
         gameObject.layer = formaInstanciada.layer;
         int layer = formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID;
         Destroy(formaInstanciada);
-        formaInstanciada = Instantiate(conejo, transform.position, transform.rotation, transform);
+        formaInstanciada = Instantiate(forma, transform.position, transform.rotation, transform);
         formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID = layer;
         formaInstanciada.layer =  gameObject.layer;
-        StartCoroutine(TransicionZoom(5f));
-    }
-
-    void TransformarHumano()
-    {
-        transform.position = formaInstanciada.transform.position;
-        gameObject.layer = formaInstanciada.layer;
-        int sortinglayer = formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID;
-        Destroy(formaInstanciada);
-        formaInstanciada = Instantiate(humano, transform.position, transform.rotation, transform);
-        formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID = sortinglayer;
-        formaInstanciada.layer =  gameObject.layer;
-        StartCoroutine(TransicionZoom(5f));
+        StartCoroutine(TransicionZoom(zoomCamara));
     }
 
     IEnumerator TransicionZoom(float zoomCamara)

@@ -12075,7 +12075,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 2.93, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26877,7 +26877,7 @@ Transform:
   m_GameObject: {fileID: 1391809246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.31, y: 2.47, z: 0.067917526}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26897,6 +26897,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humano: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6, type: 3}
   conejo: {fileID: 7877050277202353975, guid: 4ac8439a3a3f98448ac8fe0e23b91cd8, type: 3}
+  ave: {fileID: 7161843778953142082, guid: 6ff98aa06132e5d4ab411698c4abb033, type: 3}
+  oso: {fileID: 6502726861691611733, guid: 2b2af1750e9262744b4d12aeea18f244, type: 3}
   mainCamera: {fileID: 519420031}
   transitionSpeed: 0.5
 --- !u!1001 &1394001388
