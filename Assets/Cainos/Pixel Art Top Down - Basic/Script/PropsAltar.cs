@@ -17,11 +17,13 @@ namespace Cainos.PixelArtTopDown_Basic
         private void OnTriggerEnter2D(Collider2D other)
         {
             targetColor = new Color(1, 1, 1, 1);
+            Debug.Log("Entra");
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
             targetColor = new Color(1, 1, 1, 0);
+            Debug.Log("Sale");
         }
 
         private void Update()

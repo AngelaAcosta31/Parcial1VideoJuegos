@@ -44,8 +44,6 @@ namespace Cainos.PixelArtTopDown_Basic
             } 
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
-            Debug.Log(animator.GetBool("IsMoving"));
-
             rb.velocity = speed * dir;
         }
     }
