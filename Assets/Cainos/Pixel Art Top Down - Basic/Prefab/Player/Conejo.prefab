@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7159520090064137494}
   m_Layer: 20
   m_Name: Conejo
-  m_TagString: Conejo
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

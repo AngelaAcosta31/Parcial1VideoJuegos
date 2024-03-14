@@ -1,32 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActivarPilar : MonoBehaviour
 {
     public SpriteRenderer Outline;
     public SpriteRenderer Rune;
-    private Color curColor;
-    private Color targetColor;
+    private Color targetColor = new Color(1f, 1f, 1f);
+    private Color activateColor = new Color(94f / 255f, 237f / 255f, 255f / 255f, 0.8f);
+    private bool isPlayerInside = false;
+    public bool Activado = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        targetColor = new Color(255, 255, 255, 255);
-        Rune.enabled = true;
-        setColor(targetColor);
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInside = true;
+            setColor(targetColor);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        targetColor = new Color(0, 0, 0, 0);
-        setColor(targetColor);
-        Rune.enabled = false;
+        if (!Activado)
+        {
+            isPlayerInside = false;
+            setColor(Color.clear);
+            Rune.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isPlayerInside && Input.GetKeyDown(KeyCode.Q))
+        {
+            Rune.enabled = true;
+            Activado = true;
+            Debug.Log("Activado");
+            setColor(activateColor);
+        }
     }
 
     private void setColor(Color color)
     {
-        curColor = Color.Lerp(curColor, targetColor, 0.00001f * Time.deltaTime);
-        Outline.color = targetColor;
+        Outline.color = color;
     }
-    
 }
