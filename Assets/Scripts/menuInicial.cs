@@ -7,6 +7,7 @@ public class menuInicial : MonoBehaviour
 {
    public void Jugar(){
    SceneManager.LoadScene("Nivel");
+   Debug.Log("Escena activa: " + SceneManager.GetActiveScene().name);
    }
 
    public void Instrucciones(){
@@ -21,7 +22,6 @@ public class menuInicial : MonoBehaviour
    }
 
    public void Salir(){
-   Debug.Log("Salir....");
    Application.Quit();
    }
 }

@@ -39,7 +39,7 @@ public class Pausa : MonoBehaviour
 
 
     public void Salir(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    SceneManager.LoadScene("menuInicial");
     Application.Quit();
     }
 
