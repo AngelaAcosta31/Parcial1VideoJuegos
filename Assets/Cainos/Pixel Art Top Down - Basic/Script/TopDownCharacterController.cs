@@ -1,50 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
         public float speed;
-        public float zoomCamara;
-
         private Animator animator;
+
         private Rigidbody2D rb;
+        private Vector2 moveDirection = Vector2.zero;
+        private Vector2 previousMoveDirection = Vector2.zero;
 
         private void Start()
         {
-            animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
         private void Update()
         {
-            Vector2 dir = Vector2.zero;
-            if (Input.GetKey(KeyCode.A))
+            moveDirection.x = Input.GetAxisRaw("Horizontal");
+            moveDirection.y = Input.GetAxisRaw("Vertical");
+
+            if (moveDirection != Vector2.zero)
             {
-                dir.x = -1;
-                animator.SetInteger("Direction", 3);
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                dir.x = 1;
-                animator.SetInteger("Direction", 2);
+                moveDirection.Normalize();
+                previousMoveDirection = moveDirection;
             }
 
-            if (Input.GetKey(KeyCode.W))
+            if (moveDirection != Vector2.zero)
             {
-                dir.y = 1;
-                animator.SetInteger("Direction", 1);
+                animator.SetFloat("Horizontal", moveDirection.x);
+                animator.SetFloat("Vertical", moveDirection.y);
+                animator.SetFloat("Speed", moveDirection.sqrMagnitude);
             }
-            else if (Input.GetKey(KeyCode.S))
+        }
+
+        private void FixedUpdate()
+        {
+            rb.velocity = Vector2.zero;
+
+            if (moveDirection != Vector2.zero)
             {
-                dir.y = -1;
-                animator.SetInteger("Direction", 0);
+                rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
             }
-            dir.Normalize();
-            animator.SetBool("IsMoving", dir.magnitude > 0);
-            rb.velocity = speed * dir;
+            else
+            {
+                animator.SetFloat("Horizontal", previousMoveDirection.x);
+                animator.SetFloat("Vertical", previousMoveDirection.y);
+                animator.SetFloat("Speed", 0f);
+            }
         }
     }
 }

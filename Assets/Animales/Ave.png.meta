@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,175 +97,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37ac15b30e6a08944a6949da0d6043dc
-      internalID: 1698555379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fly_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7fe7e8864bde3641846acceedeb9b09
-      internalID: 476689582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fly_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 616731cd50498044e933a6253bc9dbab
-      internalID: 1985697406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fly_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcfca1e51c9cb8849b15746b2c804062
-      internalID: 763631489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Damage_0
+      name: AveIdle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 32
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abd0bf904782ea447ab9e8ee35174a93
-      internalID: -1847950586
+      spriteID: 52351c95e2585bb4090d74947a60872c
+      internalID: -2077910320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Damage_1
+      name: AveIdle_1
       rect:
         serializedVersion: 2
         x: 16
         y: 32
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de49d1856935bdf46bf47ff066a56c1a
-      internalID: -1609152377
+      spriteID: 5bfb2e3b22351cf46a6c9883d5b015a8
+      internalID: -2109915712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Damage_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4096b365afda2e2478ad4a8104502346
-      internalID: -1839942147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Damage_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29daeba492904534a883079625310e08
-      internalID: -305693349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sentado_0
+      name: AveFly_0
       rect:
         serializedVersion: 2
         x: 0
@@ -273,20 +147,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      pivot: {x: 0.5073138, y: 0.27426243}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 663253e701d4e9d40a10868dd72c242f
-      internalID: -797579597
+      spriteID: f5aa1b8207faefd44b25698fae04881d
+      internalID: -1444066755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sentado_1
+      name: AveFly_1
       rect:
         serializedVersion: 2
         x: 16
@@ -294,20 +168,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      pivot: {x: 0.50745857, y: 0.2145921}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9192f70182355b40abe18e6aa31e550
-      internalID: -723228056
+      spriteID: 47106ca7544692c46a7bf3adcf07db4f
+      internalID: -1303759885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sentado_2
+      name: AveFly_2
       rect:
         serializedVersion: 2
         x: 32
@@ -315,20 +189,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      pivot: {x: 0.5099447, y: 0.20884609}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47f7918ebf8521944a6fbbbdae14475b
-      internalID: -1225442783
+      spriteID: ccf92c57e64801b4e89fb50ed787004c
+      internalID: 527359817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sentado_3
+      name: AveFly_3
       rect:
         serializedVersion: 2
         x: 48
@@ -336,98 +210,161 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      pivot: {x: 0.5, y: 0.22105384}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3930a4e9f7542c4c9b99dcb2ad378ac
-      internalID: -1734422136
+      spriteID: fd77973a83a2d9f4ab455e9b4aa2e3f1
+      internalID: -297032971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_0
+      name: AveFly_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.20818007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b6c3ed01859aa4a943e8592c99cb94
+      internalID: -1163508308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AveFly_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2841375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e553757e3c9bf2940b6f0fb2b0593a4c
+      internalID: -866088394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AveFly_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2756977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ac3f0cae2ecfe4d92ccbf058fe2c3f
+      internalID: 593214156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AveFly_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27569795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78626c3fd0911ea4298320bdf1e9d15c
+      internalID: 467047747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AveEat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b08f7a74ea0899c409092262ba18402e
-      internalID: -522033870
+      spriteID: 263da247354c1eb43a53dd86aca40200
+      internalID: -777553420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1
+      name: AveEat_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48e6479c1e85541498db058cc7cd5a60
-      internalID: -1271436284
+      spriteID: ec0aa3a64fbcb9a4d99a49ebc5c2ca09
+      internalID: -19418489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_2
+      name: AveEat_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 232e28adb51126a4cadfd3bfa959ab8e
-      internalID: 1336832231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.3826703, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb8ac6769c75cfc4d93a273d9ba960dc
-      internalID: 1087827797
+      spriteID: 8f0848a003d901c408e1210a3affd94e
+      internalID: -552702773
       vertices: []
       indices: 
       edges: []
@@ -443,22 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Damage_0: -1847950586
-      Damage_1: -1609152377
-      Damage_2: -1839942147
-      Damage_3: -305693349
-      Fly_0: 1698555379
-      Fly_1: 476689582
-      Fly_2: 1985697406
-      Fly_3: 763631489
-      Sentado_0: -797579597
-      Sentado_1: -723228056
-      Sentado_2: -1225442783
-      Sentado_3: -1734422136
-      walk_0: -522033870
-      walk_1: -1271436284
-      walk_2: 1336832231
-      walk_3: 1087827797
+      AveEat_0: -777553420
+      AveEat_1: -19418489
+      AveEat_2: -552702773
+      AveFly_0: -1444066755
+      AveFly_1: -1303759885
+      AveFly_2: 527359817
+      AveFly_3: -297032971
+      AveFly_4: -1163508308
+      AveFly_5: -866088394
+      AveFly_6: 593214156
+      AveFly_7: 467047747
+      AveIdle_0: -2077910320
+      AveIdle_1: -2109915712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

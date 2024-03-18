@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd146093740c5d43b5909c7913f3109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  zoomCamara: 0
+  speed: 5
+  animator: {fileID: 0}
 --- !u!212 &7877050277202353972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_Offset: {x: -0.010159045, y: 0.06821753}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.4}
+    pivot: {x: 0.5, y: 0.2775581}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -222,8 +222,8 @@ Transform:
   m_GameObject: {fileID: 7877050277824008939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.056, y: -0.074, z: 0.1}
-  m_LocalScale: {x: 0.3888374, y: 0.37985525, z: 0.3888374}
+  m_LocalPosition: {x: 0.052, y: -0.008, z: 0.1}
+  m_LocalScale: {x: 0.41632822, y: 0.21555683, z: 0.41632822}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7877050277202353973}
