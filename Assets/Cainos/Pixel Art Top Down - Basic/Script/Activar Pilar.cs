@@ -4,14 +4,14 @@ public class ActivarPilar : MonoBehaviour
 {
     public SpriteRenderer Outline;
     public SpriteRenderer Rune;
-    private Color targetColor = new Color(1f, 1f, 1f);
+    private Color targetColor = new Color(1f, 1f, 1f, 1f);
     private Color activateColor = new Color(94f / 255f, 237f / 255f, 255f / 255f, 0.8f);
     private bool isPlayerInside = false;
     public bool Activado = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !Activado)
         {
             isPlayerInside = true;
             setColor(targetColor);
@@ -34,7 +34,6 @@ public class ActivarPilar : MonoBehaviour
         {
             Rune.enabled = true;
             Activado = true;
-            Debug.Log("Activado");
             setColor(activateColor);
         }
     }

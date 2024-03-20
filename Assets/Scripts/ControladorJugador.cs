@@ -39,18 +39,28 @@ public class ControladorJugador : MonoBehaviour
         }
     }
 
-    void Transformarcion(GameObject forma, float zoomCamara)
-    {
-        transform.position = formaInstanciada.transform.position;
-        gameObject.layer = formaInstanciada.layer;
-        int layer = formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID;
-        Destroy(formaInstanciada);
-        formaInstanciada = Instantiate(forma, transform.position, transform.rotation, transform);
-        formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID = layer;
-        formaInstanciada.layer =  gameObject.layer;
-        StartCoroutine(TransicionZoom(zoomCamara));
-    }
+void Transformarcion(GameObject forma, float zoomCamara)
+{
+    transform.position = formaInstanciada.transform.position;
+    gameObject.layer = formaInstanciada.layer;
+    int layer = formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID;
+    Destroy(formaInstanciada);
+    formaInstanciada = Instantiate(forma, transform);
 
+
+    float nuevoAncho = forma.GetComponent<BoxCollider2D>().size.x;
+    float nuevoAlto = forma.GetComponent<BoxCollider2D>().size.y;
+
+
+    formaInstanciada.GetComponent<BoxCollider2D>().size = new Vector2(nuevoAncho, nuevoAlto);
+
+
+
+    formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID = layer;
+    formaInstanciada.layer = gameObject.layer;
+    StartCoroutine(TransicionZoom(zoomCamara));
+
+}
     IEnumerator TransicionZoom(float zoomCamara)
 {
     float initialSize = mainCamera.orthographicSize;

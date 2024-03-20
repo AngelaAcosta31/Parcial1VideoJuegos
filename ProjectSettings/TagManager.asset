@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Conejo
+  - Oso
+  - Ave
+  - KeyRock
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - Layer 1
   - Layer 2
   - Layer 3
-  - 
+  - Player
   - 
   - 
   - 

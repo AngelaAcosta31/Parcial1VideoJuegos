@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7159520090064137494}
   m_Layer: 20
   m_Name: Conejo
-  m_TagString: Player
+  m_TagString: Conejo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  animator: {fileID: 0}
 --- !u!212 &7877050277202353972
 SpriteRenderer:
   m_ObjectHideFlags: 0
