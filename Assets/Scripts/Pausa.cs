@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class Pausa : MonoBehaviour
 {
+    public AudioSource clip;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
     private bool juegoPausado = false;
@@ -43,8 +45,16 @@ public class Pausa : MonoBehaviour
     Application.Quit();
     }
 
-    public void Sonido(){
+    public void PlaySoundBtn(){
+        clip.Play();
+    }
 
+    public void MuteAudio(bool mute){
+        if(mute){
+            AudioListener.volume = 0;
+        }else{
+            AudioListener.volume = 1;
+        }
     }
 
 

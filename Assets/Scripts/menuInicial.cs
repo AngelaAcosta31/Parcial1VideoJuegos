@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class menuInicial : MonoBehaviour
 {
+   public AudioSource clip;
    public void Jugar(){
    SceneManager.LoadScene("Nivel");
    Debug.Log("Escena activa: " + SceneManager.GetActiveScene().name);
@@ -24,4 +26,9 @@ public class menuInicial : MonoBehaviour
    public void Salir(){
    Application.Quit();
    }
+
+   public void PlaySoundBtn(){
+      clip.Play();
+   }
+
 }
