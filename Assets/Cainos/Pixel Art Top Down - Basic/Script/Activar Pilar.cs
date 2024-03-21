@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ActivarPilar : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ActivarPilar : MonoBehaviour
     private Color activateColor = new Color(94f / 255f, 237f / 255f, 255f / 255f, 0.8f);
     private bool isPlayerInside = false;
     public bool Activado = false;
+    public AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +17,7 @@ public class ActivarPilar : MonoBehaviour
         {
             isPlayerInside = true;
             setColor(targetColor);
+            clip.Play();
         }
     }
 

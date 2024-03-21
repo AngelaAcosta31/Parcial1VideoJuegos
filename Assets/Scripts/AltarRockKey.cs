@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class AltarRockKey : MonoBehaviour
 {
     public List<SpriteRenderer> runes;
@@ -14,6 +14,7 @@ public class AltarRockKey : MonoBehaviour
     private Color curColor;
     private Color targetColor;
     public bool Activo;
+    public AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +22,7 @@ public class AltarRockKey : MonoBehaviour
             targetColor = new Color(1, 1, 1, 1);
             Activo = true;
             RockRune.GetComponent<CircleCollider2D>().enabled = true;
+            clip.Play();
         }
 
     }
