@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class OpenDoor : MonoBehaviour
 {
     public List<GameObject> rockRunes;
     ActivarPilar activarPilar; 
     int numRocasActivadas;
+    public AudioSource clip;
 
     
     void Start()
@@ -21,9 +23,10 @@ public class OpenDoor : MonoBehaviour
     void Update()
     {
         int numRocasActivadasActuales = 0;
-         foreach (var rock in rockRunes)
+        foreach (var rock in rockRunes)
             {
                 activarPilar = rock.GetComponent<ActivarPilar>();
+                clip.Play();
 
                 if (activarPilar != null && activarPilar.Activado)
                 {

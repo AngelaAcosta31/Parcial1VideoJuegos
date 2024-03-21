@@ -38,8 +38,8 @@ public class creditos : MonoBehaviour
         // Cambia a la escena "menuInicial"
         SceneManager.LoadScene("menuInicial");
     }
-    public void PlaySoundBtn(){
-        clip.Play();
+    public void PlaySoundBtn(AudioClip audio){
+        clip.PlayOneShot(audio);
     }
 
 }
