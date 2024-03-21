@@ -8,6 +8,7 @@ public class Pausa : MonoBehaviour
     public AudioSource clip;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
+    [SerializeField] private GameObject botonAudio;
     
     private bool juegoPausado = false;
     
@@ -45,6 +46,7 @@ public class Pausa : MonoBehaviour
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
         DontDestroyOnLoad(gameObject);
+        SceneManager.UnloadSceneAsync("Nivel");
         SceneManager.LoadScene("Nivel");
     }
 
@@ -52,6 +54,9 @@ public class Pausa : MonoBehaviour
     public void Salir(){
         botonPausa.SetActive(false);
         menuPausa.SetActive(false);
+        botonAudio.SetActive(false);
+        // Descarga la escena del juego actual
+        SceneManager.UnloadSceneAsync("Nivel");
         SceneManager.LoadScene("menuInicial");
     }
 

@@ -35355,6 +35355,7 @@ MonoBehaviour:
   clip: {fileID: 1028612651}
   botonPausa: {fileID: 187490390}
   menuPausa: {fileID: 706793091}
+  botonAudio: {fileID: 1655403617}
 --- !u!114 &1028612647
 MonoBehaviour:
   m_ObjectHideFlags: 0
