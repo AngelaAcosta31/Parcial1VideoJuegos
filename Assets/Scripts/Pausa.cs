@@ -55,17 +55,16 @@ public class Pausa : MonoBehaviour
         SceneManager.LoadScene("menuInicial");
     }
 
-    public void PlaySoundBtn(){
+    public void PauseSoundFondo(){
+        clip.mute = !clip.mute;
+    }
+
+    public void PlaySoundFondo(){
         clip.Play();
     }
 
-    public void MuteAudio(bool mute){
-        if(mute){
-            AudioListener.volume = 0;
-        }else{
-            AudioListener.volume = 1;
-        }
+    public void PlaySoundBtn(AudioClip audio){
+        clip.PlayOneShot(audio);
     }
-
 
 }

@@ -9,7 +9,7 @@ public class menuInicial : MonoBehaviour
    public AudioSource clip;
    public void Jugar(){
    SceneManager.LoadScene("Nivel");
-   Debug.Log("Escena activa: " + SceneManager.GetActiveScene().name);
+
    }
 
    public void Instrucciones(){
@@ -27,8 +27,8 @@ public class menuInicial : MonoBehaviour
    Application.Quit();
    }
 
-   public void PlaySoundBtn(){
-      clip.Play();
+   public void PlaySoundBtn(AudioClip audio){
+      clip.PlayOneShot(audio);
    }
 
 }
