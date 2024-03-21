@@ -23,6 +23,7 @@ public class menuInicial : MonoBehaviour
    }
 
    public void Creditos(){
+      SceneManager.UnloadSceneAsync("menuInicial");
       SceneManager.LoadScene("Creditos");
    }
 

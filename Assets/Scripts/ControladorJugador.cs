@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cainos.PixelArtTopDown_Basic;
 public class ControladorJugador : MonoBehaviour
 {
     [SerializeField] private GameObject humano;
@@ -21,19 +21,19 @@ public class ControladorJugador : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Transformarcion(conejo, 2.5f);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Transformarcion(humano, 5f);
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Transformarcion(ave, 2.5f);
         }
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Transformarcion(oso, 6f);
         }
@@ -44,9 +44,9 @@ void Transformarcion(GameObject forma, float zoomCamara)
     transform.position = formaInstanciada.transform.position;
     gameObject.layer = formaInstanciada.layer;
     int layer = formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID;
+
     Destroy(formaInstanciada);
     formaInstanciada = Instantiate(forma, transform);
-
 
     float nuevoAncho = forma.GetComponent<BoxCollider2D>().size.x;
     float nuevoAlto = forma.GetComponent<BoxCollider2D>().size.y;
@@ -58,7 +58,10 @@ void Transformarcion(GameObject forma, float zoomCamara)
 
     formaInstanciada.GetComponent<SpriteRenderer>().sortingLayerID = layer;
     formaInstanciada.layer = gameObject.layer;
+
     StartCoroutine(TransicionZoom(zoomCamara));
+
+    
 
 }
     IEnumerator TransicionZoom(float zoomCamara)

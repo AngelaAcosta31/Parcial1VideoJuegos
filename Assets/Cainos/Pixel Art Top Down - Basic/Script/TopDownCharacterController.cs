@@ -1,20 +1,25 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
         public float speed;
-        private Animator animator;
+        public Animator animator;
 
         private Rigidbody2D rb;
         private Vector2 moveDirection = Vector2.zero;
         private Vector2 previousMoveDirection = Vector2.zero;
 
+    
+
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+            animator.Play("Anim");
+            StartCoroutine(DelayedDisableBoolean());
         }
 
         private void Update()
@@ -34,7 +39,10 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetFloat("Vertical", moveDirection.y);
                 animator.SetFloat("Speed", moveDirection.sqrMagnitude);
             }
+
         }
+
+
 
         private void FixedUpdate()
         {
@@ -51,5 +59,15 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetFloat("Speed", 0f);
             }
         }
+
+        IEnumerator DelayedDisableBoolean()
+        {
+            // Esperar un corto tiempo
+            yield return new WaitForSeconds(0.1f); // Puedes ajustar el tiempo según lo necesites
+            
+            // Desactivar el booleano después de un breve retraso
+            animator.SetBool("isTransform", false);
+        }
+
     }
 }
