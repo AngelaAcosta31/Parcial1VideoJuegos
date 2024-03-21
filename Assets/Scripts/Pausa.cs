@@ -8,10 +8,12 @@ public class Pausa : MonoBehaviour
     public AudioSource clip;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
+    
     private bool juegoPausado = false;
+    
 
     private void update(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(!juegoPausado && Input.GetKeyDown(KeyCode.Pause)){
             if(juegoPausado){
                 Reanudar();
             }else{
@@ -24,6 +26,8 @@ public class Pausa : MonoBehaviour
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
+        DontDestroyOnLoad(gameObject);
+        
     }
 
     public void Reanudar(){
@@ -31,18 +35,24 @@ public class Pausa : MonoBehaviour
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+        DontDestroyOnLoad(gameObject);
+
     }
 
     public void Reiniciar(){
         juegoPausado = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
+        DontDestroyOnLoad(gameObject);
+        SceneManager.LoadScene("Nivel");
     }
 
 
     public void Salir(){
-    SceneManager.LoadScene("menuInicial");
-    Application.Quit();
+        botonPausa.SetActive(false);
+        menuPausa.SetActive(false);
+        SceneManager.LoadScene("menuInicial");
     }
 
     public void PlaySoundBtn(){

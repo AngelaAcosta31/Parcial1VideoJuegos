@@ -3,52 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//when something get into the alta, make the runes glow
-namespace Cainos.PixelArtTopDown_Basic
+public class PropsAltar : MonoBehaviour
 {
+    public List<SpriteRenderer> runes;
+    public List<GameObject> rockRunes;
+    public float lerpSpeed;
 
-    public class PropsAltar : MonoBehaviour
+    private Color curColor;
+    private Color targetColor;
+    ActivarPilar activarPilar; 
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        public List<SpriteRenderer> runes;
-        public List<GameObject> rockRunes;
-        public float lerpSpeed;
+        targetColor = new Color(1, 1, 1, 1);
+        Debug.Log("Entra");
+    }
 
-        private Color curColor;
-        private Color targetColor;
-        ActivarPilar activarPilar; 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        targetColor = new Color(1, 1, 1, 0);
+        Debug.Log("Sale");
+    }
 
-        private void OnTriggerEnter2D(Collider2D other)
+    private void Update()
+    {
+        int numRocasActivadas = 0;
+
+        foreach (var rock in rockRunes)
         {
-            targetColor = new Color(1, 1, 1, 1);
-            Debug.Log("Entra");
+            activarPilar = rock.GetComponent<ActivarPilar>();
+
+            if (activarPilar != null && activarPilar.Activado)
+            {
+                numRocasActivadas++;
+            }
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
+
+        for (int i = 0; i < numRocasActivadas && i < runes.Count; i++)
         {
-            targetColor = new Color(1, 1, 1, 0);
-            Debug.Log("Sale");
-        }
-
-        private void Update()
-        {
-            int numRocasActivadas = 0;
-
-            foreach (var rock in rockRunes)
-            {
-                activarPilar = rock.GetComponent<ActivarPilar>();
-
-                if (activarPilar != null && activarPilar.Activado)
-                {
-                    numRocasActivadas++;
-                }
-            }
-
-            curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
-
-            for (int i = 0; i < numRocasActivadas && i < runes.Count; i++)
-            {
-                runes[i].color = curColor;
-            }
+            runes[i].color = curColor;
         }
     }
 }
+
