@@ -1,51 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class PropsAltar : MonoBehaviour
 {
-    public List<SpriteRenderer> runes;
-    public List<GameObject> rockRunes;
-    public float lerpSpeed;
+        public List<SpriteRenderer> runes;
+        public List<GameObject> rockRunes;
+        public float lerpSpeed;
 
-    private Color curColor;
-    private Color targetColor;
-    ActivarPilar activarPilar; 
+        private Color curColor;
+        private Color targetColor = new Color(1, 1, 1, 1);
+        ActivarPilar activarPilar; 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        targetColor = new Color(1, 1, 1, 1);
-        Debug.Log("Entra");
-    }
+        int numRocasActivadas;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        targetColor = new Color(1, 1, 1, 0);
-        Debug.Log("Sale");
-    }
+        public bool Activo ;
 
-    private void Update()
-    {
-        int numRocasActivadas = 0;
-
-        foreach (var rock in rockRunes)
+        void Start()
         {
-            activarPilar = rock.GetComponent<ActivarPilar>();
+            if (rockRunes != null){
+                numRocasActivadas = rockRunes.Count;
+            }
+            
+        }
 
-            if (activarPilar != null && activarPilar.Activado)
+        void OnTriggerStay2D(Collider2D other)
+        {
+            if (Activo){
+                    SceneManager.LoadScene("Creditos");
+                }
+            }
+
+        private void Update()
+        {
+            int numRocasActivadasActuales = 0;
+
+            foreach (var rock in rockRunes)
             {
-                numRocasActivadas++;
+                activarPilar = rock.GetComponent<ActivarPilar>();
+
+                if (activarPilar != null && activarPilar.Activado)
+                {
+                    numRocasActivadasActuales++;
+                }
+            }
+            
+            curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
+
+            for (int i = 0; i < numRocasActivadasActuales && i < runes.Count; i++)
+            {   
+                runes[i].color = curColor;
+            }
+
+             if (numRocasActivadasActuales == numRocasActivadas){
+                    Activo = true;
             }
         }
-
-        curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
-
-        for (int i = 0; i < numRocasActivadas && i < runes.Count; i++)
-        {
-            runes[i].color = curColor;
-        }
     }
-}
+
 
