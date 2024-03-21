@@ -10,6 +10,8 @@ public class creditos : MonoBehaviour
 
     void Start()
     {
+        
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
         Invoke("Atras",17);
         // Comienza la reproducción de la música cuando la escena inicia.
         if (audioSource != null)

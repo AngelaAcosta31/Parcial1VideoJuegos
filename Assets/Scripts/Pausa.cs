@@ -55,6 +55,7 @@ public class Pausa : MonoBehaviour
         botonPausa.SetActive(false);
         menuPausa.SetActive(false);
         botonAudio.SetActive(false);
+        
         // Descarga la escena del juego actual
         SceneManager.UnloadSceneAsync("Nivel");
         SceneManager.LoadScene("menuInicial");

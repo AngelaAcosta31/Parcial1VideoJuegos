@@ -312,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 486322135}
   clip: {fileID: 231002212}
+  textoCreditos: {fileID: 1707848601}
 --- !u!111 &231002211
 Animation:
   m_ObjectHideFlags: 0
@@ -1044,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 486322135}
   clip: {fileID: 231002212}
+  textoCreditos: {fileID: 0}
 --- !u!1 &1962015938
 GameObject:
   m_ObjectHideFlags: 0
